@@ -3,7 +3,7 @@ import { Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
+import { LeadCard } from '@/components/lead-card';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
@@ -35,23 +35,29 @@ export default function HomeScreen() {
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+            Meta Leads Dashboard
           </ThemedText>
         </ThemedView>
 
         <ThemedText type="code" style={styles.code}>
-          get started
+          Recent Leads
         </ThemedText>
 
         <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
+          <LeadCard
+            name="react lead 1"
+            email={"src/app/index.tsx" }
+            phone={"123-456-7890"}
           />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
+          <LeadCard
+            name="actual lead 2"
+            email={"getDevMenuHint()"}
+            phone={"098-765-4321"}
+          />
+          <LeadCard
+            name="recent lead 2 and so on"
+            email={"npm run reset-project"}
+            phone={"123-456-7890"}
           />
         </ThemedView>
 
@@ -66,6 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     flexDirection: 'row',
+    backgroundColor: '#021826',
   },
   safeArea: {
     flex: 1,
@@ -81,18 +88,22 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: Spacing.four,
     gap: Spacing.four,
+    backgroundColor: '#021826',
   },
   title: {
     textAlign: 'center',
+    color: '#E4EFF0',
   },
   code: {
     textTransform: 'uppercase',
+    color: '#0F8C8C',
   },
   stepContainer: {
     gap: Spacing.three,
     alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
+    paddingHorizontal: Spacing.two,
     paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
+    borderRadius: Spacing.two,
+    backgroundColor: '#012840',
   },
 });
